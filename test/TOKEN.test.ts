@@ -1,11 +1,10 @@
 import { describe, it, before, after } from 'node:test';
 import assert from 'node:assert';
 import * as hre from 'hardhat';
+import {NonceManager} from 'ethers';
 import { loadFixture, reset } from '@nomicfoundation/hardhat-network-helpers';
 import '@nomiclabs/hardhat-ethers';
 import {TOKEN} from '../src/typechain-types';
-import {ethers} from 'hardhat';
-import {NonceManager} from 'ethers';
 
 const TRANSFER_AMOUNT = '10000';
 const TRANSACTION_SETTINGS = {
@@ -33,11 +32,11 @@ describe('Utilities', function () {
 async function deployFixture() {
   const provider = hre.ethers.getDefaultProvider('http://127.0.0.1:8545/');
   // const provider = new JsonRpcProvider('http://127.0.0.1:8545/');
-  const admin = new NonceManager((await ethers.getSigners())[0]).connect(provider);
-  const minter = new NonceManager((await ethers.getSigners())[1]).connect(provider);
-  const burner = new NonceManager((await ethers.getSigners())[2]).connect(provider);
-  const proxy = new NonceManager((await ethers.getSigners())[3]).connect(provider);
-  const alice = new NonceManager((await ethers.getSigners())[4]).connect(provider);
+  const admin = new NonceManager((await hre.ethers.getSigners())[0]).connect(provider);
+  const minter = new NonceManager((await hre.ethers.getSigners())[1]).connect(provider);
+  const burner = new NonceManager((await hre.ethers.getSigners())[2]).connect(provider);
+  const proxy = new NonceManager((await hre.ethers.getSigners())[3]).connect(provider);
+  const alice = new NonceManager((await hre.ethers.getSigners())[4]).connect(provider);
 
   const factory = await hre.ethers.getContractFactory('TOKEN', admin);
   // deploying uninitliazed contract
