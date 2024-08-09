@@ -80,7 +80,7 @@ describe('token initialization', function () {
     const DEFAULT_ADMIN_ROLE = await token.DEFAULT_ADMIN_ROLE();
     assert.equal(await token.hasRole(DEFAULT_ADMIN_ROLE, await admin.getAddress()), true);
   });
-  it('sets DEFAULT_ADMIN_ROLE role as ADMIN for MINTER/BURNER/ESCROW roles', async function () {
+  it('sets DEFAULT_ADMIN_ROLE role as ADMIN for MINTER/BURNER roles', async function () {
     const { token } = deployment;
     const DEFAULT_ADMIN_ROLE = await token.DEFAULT_ADMIN_ROLE();
     const MINTER_ROLE = await token.MINTER_ROLE();
@@ -88,7 +88,7 @@ describe('token initialization', function () {
     assert.equal(await token.getRoleAdmin(MINTER_ROLE), DEFAULT_ADMIN_ROLE);
     assert.equal(await token.getRoleAdmin(BURNER_ROLE), DEFAULT_ADMIN_ROLE);
   });
-  it('set MINTER, BURNER, ESCROW roles to the named accounts', async function () {
+  it('set MINTER, BURNER roles to the named accounts', async function () {
     const { token, minter, burner } = deployment;
     const MINTER_ROLE = await token.MINTER_ROLE();
     const BURNER_ROLE = await token.BURNER_ROLE();
