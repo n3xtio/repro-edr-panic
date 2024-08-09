@@ -1,0 +1,23 @@
+node_modules/
+
+# next
+.next/
+.build/
+.coverage/
+
+.idea
+sqlite.db
+
+**/build/
+.DS_Store
+
+.turbo
+dist/**
+.next/**
+
+# openzeppelin upgrade
+/.openzeppelin/
+/.idea/
+
+# local env config
+.env.local

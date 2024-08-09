@@ -1,0 +1,40 @@
+{
+  "name": "@n3xt/blockchain",
+  "version": "0.3.0",
+  "private": true,
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "RUST_BACKTRACE=1 node --import tsx --test ./test/**.test.ts",
+    "pretest": "pnpm compile",
+    "hardhat-node": "npx hardhat node"
+  },
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@ethersproject/providers": "^5.7.2",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.11",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@openzeppelin/contracts": "^5.0.2",
+    "@openzeppelin/contracts-upgradeable": "^5.0.2",
+    "@openzeppelin/hardhat-upgrades": "^3.2.0",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.16",
+    "@types/chai-as-promised": "^7.1.8",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.14.10",
+    "esbuild": "^0.23.0",
+    "ethers6": "npm:ethers@6",
+    "hardhat": "^2.22.6",
+    "hardhat-deploy": "^0.12.4",
+    "hardhat-deploy-ethers": "^0.4.2",
+    "hardhat-gas-reporter": "^1.0.8",
+    "jest-environment-node-single-context": "^29.4.0",
+    "solidity-coverage": "^0.8.12",
+    "tsx": "^4.16.2",
+    "typechain": "^8.3.2"
+  },
+  "dependencies": {
+    "ethers": "^6.13.1"
+  }
+}
