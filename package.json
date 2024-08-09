@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "compile": "npx hardhat compile",
-    "test": "RUST_BACKTRACE=1 node --import tsx --test ./test/**.test.ts",
+    "test": "RUST_BACKTRACE=full node --import tsx --test ./test/**.test.ts",
     "pretest": "pnpm compile",
     "hardhat-node": "npx hardhat node"
   },
