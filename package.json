@@ -6,7 +6,8 @@
     "compile": "npx hardhat compile",
     "test": "RUST_BACKTRACE=full node --import tsx --test ./test/**.test.ts",
     "pretest": "pnpm compile",
-    "hardhat-node": "npx hardhat node"
+    "hardhat-node": "npx hardhat node",
+    "prepare": "husky"
   },
   "main": "src/index.ts",
   "devDependencies": {
@@ -29,6 +30,7 @@
     "hardhat-deploy": "^0.12.4",
     "hardhat-deploy-ethers": "^0.4.2",
     "hardhat-gas-reporter": "^1.0.8",
+    "husky": "^9.1.7",
     "jest-environment-node-single-context": "^29.4.0",
     "solidity-coverage": "^0.8.12",
     "tsx": "^4.16.2",

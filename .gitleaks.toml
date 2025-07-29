@@ -1,0 +1,4 @@
+[extend]
+useDefault = true
+
+# Repository-specific allowlist will be added here as needed
